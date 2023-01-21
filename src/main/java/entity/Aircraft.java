@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.xml.bind.annotation.XmlElement;
 import java.util.List;
 
 @Data
@@ -21,9 +20,8 @@ public class Aircraft {
     private int capacity;
     private int maxDistance;
 
-    @OneToMany (mappedBy = "aircraft", cascade = CascadeType.ALL)
-    @XmlElement
-    private List<Pilot> pilots;
+    @OneToMany(mappedBy ="aircraft", cascade = CascadeType.ALL)
+    private List<Pilot> pilots ;
 
 
 }

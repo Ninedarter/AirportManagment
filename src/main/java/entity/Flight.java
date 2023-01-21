@@ -20,15 +20,17 @@ public class Flight {
     private LocalDateTime date;
     private FlightStatus status;
 
-    @OneToOne  (mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)
     private Destination destination;
 
-    @OneToOne  (mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToOne(mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true) //pasiziureti sarysi argerai
     private Aircraft aircraft;
 
-    @ManyToMany (cascade = CascadeType.ALL)
-    @JoinTable (name = "flight_passenger",
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "flight_passenger",
             joinColumns = @JoinColumn(name = "flight_id"),
             inverseJoinColumns = @JoinColumn(name = "passenger_id"))
     private List<Passenger> passengers;
+
+
 }

@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Time;
 
 @Data
@@ -21,5 +18,11 @@ public class Destination {
     private Long id;
     private String airport;
     private Time time;
+
+
+
+    @OneToOne
+    @JoinColumn(name ="flight_id")
+    private Flight flight;
 
 }
