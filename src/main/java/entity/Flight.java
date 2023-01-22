@@ -17,7 +17,7 @@ public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDateTime date;
+    private String date;
     private FlightStatus status;
 
     @OneToOne(mappedBy = "flight", cascade = CascadeType.ALL, orphanRemoval = true)

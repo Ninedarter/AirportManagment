@@ -15,9 +15,9 @@ public class Destination {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+        private Long id;
     private String airport;
-    private Time time;
+    private Integer travelTime;
 
 
 

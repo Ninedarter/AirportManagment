@@ -17,11 +17,15 @@ public class Aircraft {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String model;
-    private int capacity;
-    private int maxDistance;
+    private Integer capacity;
+    private Integer maxDistance;
 
     @OneToMany(mappedBy ="aircraft", cascade = CascadeType.ALL)
     private List<Pilot> pilots ;
+
+    @OneToOne
+    @JoinColumn(name = "flight_id")
+    private Flight flight;
 
 
 }
